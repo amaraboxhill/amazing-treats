@@ -1,68 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Amazing Treats</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #f6efe7;
+    padding: 40px;
+    color: #5a4634;
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 60px;
+    text-align: center;
+}
+
+.notice {
+    background-color: #fff3e6;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 15px 0;
+    border: 1px solid #d8c3b5;
+    border-radius: 6px;
+    font-family: 'Playfair Display', serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fffaf5;
+}
+
+table, th, td {
+    border: 1px solid #e5d5c5;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #f0e0d1;
+}
+
+button {
+    background-color: #b08968;
+    color: white;
+    padding: 14px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #9c6644;
+}
+
+.total-box {
+    font-size: 22px;
+    margin-top: 20px;
+    text-align: right;
+}
+.payment-options {
+    margin: 15px 0;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Amazing Treats</h1>
+
+<div class="notice">
+<strong>Order forms are due by March 1st.</strong><br><br>
+
+<strong>Pick Up Date:</strong><br>
+3/8 at Evangel Temple Ministers<br>
+227-10 Merrick Blvd<br>
+Laurelton NY 11413
+</div>
+
 <form action="https://formsubmit.co/Nuhairnulife@gmail.com" method="POST">
 
-    <input type="hidden" name="_next" value="https://yourusername.github.io/your-repo/thankyou.html">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_subject" value="New Amazing Treats Order!">
-    <input type="hidden" name="Grand Total" id="grandTotalInput">
+<input type="hidden" name="_next" value="thankyou.html">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="New Amazing Treats Order!">
+<input type="hidden" name="Grand Total" id="grandTotalInput">
 
-    <label>Name:</label>
-    <input type="text" name="Name" required>
+<label>Name:</label>
+<input type="text" name="Name" required>
 
-    <label>Phone Number:</label>
-    <input type="text" name="Customer Phone" required>
+<label>Phone Number:</label>
+<input type="text" name="Customer Phone" required>
 
-    <table>
-        <tr>
-            <th>Item</th>
-            <th>Qty</th>
-            <th>Unit Price</th>
-            <th>Total</th>
-        </tr>
-        <tr>
-            <td>Cookies (1 Dozen)</td>
-            <td><input type="number" name="Qty_Cookies_Dozen" min="0" value="0" id="cookiesDozen" oninput="calculate()"></td>
-            <td>$24</td>
-            <td>$<span id="totalCookiesDozen">0</span></td>
-        </tr>
-        <tr>
-            <td>Cookies (½ Dozen)</td>
-            <td><input type="number" name="Qty_Cookies_Half" min="0" value="0" id="cookiesHalf" oninput="calculate()"></td>
-            <td>$12</td>
-            <td>$<span id="totalCookiesHalf">0</span></td>
-        </tr>
-        <tr>
-            <td>Red Velvet Cupcakes (½ Dozen)</td>
-            <td><input type="number" name="Qty_Cupcakes" min="0" value="0" id="cupcakes" oninput="calculate()"></td>
-            <td>$24</td>
-            <td>$<span id="totalCupcakes">0</span></td>
-        </tr>
-        <tr>
-            <td>Brookies (per square)</td>
-            <td><input type="number" name="Qty_Brookies" min="0" value="0" id="brookies" oninput="calculate()"></td>
-            <td>$6</td>
-            <td>$<span id="totalBrookies">0</span></td>
-        </tr>
-    </table>
+<table>
+<tr>
+<th>Item</th>
+<th>Qty</th>
+<th>Unit Price</th>
+<th>Total</th>
+</tr>
 
-    <div class="total-box">
-        Grand Total: $<span id="grandTotal">0</span>
-    </div>
+<tr>
+<td>Cookies (1 Dozen)</td>
+<td><input type="number" name="Cookies_Dozen_Qty" min="0" value="0" id="cookiesDozen"></td>
+<td>$24</td>
+<td>$<span id="totalCookiesDozen">0</span></td>
+</tr>
 
-    <div class="payment-options">
-        <strong>Select Payment Method:</strong><br>
-        <label><input type="radio" name="Payment_Method" value="Cash App" required> Cash App ($Nuhairnulife)</label><br>
-        <label><input type="radio" name="Payment_Method" value="Zelle"> Zelle (April Gray - 917-627-5870)</label>
-    </div>
+<tr>
+<td>Cookies (½ Dozen)</td>
+<td><input type="number" name="Cookies_Half_Dozen_Qty" min="0" value="0" id="cookiesHalf"></td>
+<td>$12</td>
+<td>$<span id="totalCookiesHalf">0</span></td>
+</tr>
 
-    <label>Notes:</label>
-    <textarea name="Notes"></textarea>
+<tr>
+<td>Red Velvet Cupcakes (½ Dozen)</td>
+<td><input type="number" name="Cupcakes_Qty" min="0" value="0" id="cupcakes"></td>
+<td>$24</td>
+<td>$<span id="totalCupcakes">0</span></td>
+</tr>
 
-    <button type="submit">Submit Order</button>
+<tr>
+<td>Brookies (per square)</td>
+<td><input type="number" name="Brookies_Qty" min="0" value="0" id="brookies"></td>
+<td>$6</td>
+<td>$<span id="totalBrookies">0</span></td>
+</tr>
+
+</table>
+
+<button type="button" onclick="calculate()">Calculate Total</button>
+
+<div class="total-box">
+Grand Total: $<span id="grandTotal">0</span>
+</div>
+
+<div class="payment-options">
+<strong>Select Payment Method:</strong><br>
+<label><input type="radio" name="Payment Method" value="Cash App" required> Cash App ($Nuhairnulife)</label><br>
+<label><input type="radio" name="Payment Method" value="Zelle"> Zelle (April Gray - 917-627-5870)</label>
+</div>
+
+<label>Notes:</label>
+<textarea name="Notes"></textarea>
+
+<button type="submit">Submit Order</button>
 
 </form>
 
 <script>
 function calculate() {
+
     const cookiesDozen = Number(document.getElementById("cookiesDozen").value) || 0;
     const cookiesHalf = Number(document.getElementById("cookiesHalf").value) || 0;
     const cupcakes = Number(document.getElementById("cupcakes").value) || 0;
@@ -81,7 +189,9 @@ function calculate() {
     const grand = total1 + total2 + total3 + total4;
 
     document.getElementById("grandTotal").innerText = grand;
-    // This updates the hidden input so the total is sent in the email
     document.getElementById("grandTotalInput").value = "$" + grand;
 }
 </script>
+
+</body>
+</html>
